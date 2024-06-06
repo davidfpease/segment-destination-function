@@ -162,6 +162,8 @@ async function getDriftContacts(settings, email) {
   }
 }
 
+
+//FOR DEV ONLY, REMOVE everything below before adding to Segment
 const { identifyNoEmail, identifyWithEmailAndAnonymousId, identifyWithEmail, settings } = require('./samplePayloads');
 
 onIdentify(identifyWithEmailAndAnonymousId, settings).then(res => {
