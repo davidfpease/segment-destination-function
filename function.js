@@ -11,17 +11,17 @@ async function onIdentify(event, settings) {
     return;
   }
 
-  //find record by anonymousId if anonymousId is present
-  let ajsAnonymousId = event.anonymousId;
+  // possible to find record by oktaUserId here and update that single record 'directly'?
+  // let ajsAnonymousId = event.anonymousId;
 
-  if (ajsAnonymousId) {
-    let driftContact = await getDriftContactByExternalId(ajsAnonymousId, settings);
+  // if (ajsAnonymousId) {
+  //   let driftContact = await getDriftContactByExternalId(ajsAnonymousId, settings);
 
-    //update record if found
-    if (driftContact.data.length > 0) {
-      await updateDriftContact(event, settings, driftContact.data[0].id);
-    }
-  }
+  //   //update record if found
+  //   if (driftContact.data.length > 0) {
+  //     await updateDriftContact(event, settings, driftContact.data[0].id);
+  //   }
+  // }
 
   //check if an email is present
   let email = event?.traits?.email || event.email;
